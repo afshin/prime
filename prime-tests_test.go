@@ -27,13 +27,6 @@ var firstHundredPrimes = [100]uint64{
 	419, 421, 431, 433, 439, 443, 449, 457, 461, 463,
 	467, 479, 487, 491, 499, 503, 509, 521, 523, 541}
 
-func init() {
-	var candidate uint64 = 9
-	if prime.IsPrime(candidate) {
-		println("9 is prime?")
-	}
-}
-
 func TestFirstHundredNonPrimes(t *testing.T) {
 	for _, candidate := range firstHundredNonPrimes {
 		if prime.IsPrime(candidate) {
