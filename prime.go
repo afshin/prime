@@ -25,10 +25,9 @@ func IsPrime(candidate uint64) bool {
 	if candidate%2 == 0 {
 		return false
 	}
-	// LCV stands for loop control variable.
 	var lcv uint64
 	// For each divisor checked, close the gap from both sides.
-	for lcv = 3; floor(candidate/lcv)+2 < lcv; lcv = lcv + 2 {
+	for lcv = 3; floor(candidate/lcv)+2 > lcv; lcv = lcv + 2 {
 		if candidate%lcv == 0 {
 			return false
 		}
