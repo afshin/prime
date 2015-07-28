@@ -3,14 +3,6 @@
 // functions, but the API will remain backward-compatible.
 package prime
 
-import "math"
-
-// floor is a private helper function to simplify some of
-// the type conversions required in using math.Floor.
-func floor(num uint64) uint64 {
-	return uint64(math.Floor(float64(num)))
-}
-
 // IsPrime checks if candidate is a prime number.
 func IsPrime(candidate uint64) bool {
 	// 0 and 1 are not primes.
@@ -27,7 +19,7 @@ func IsPrime(candidate uint64) bool {
 	}
 	var lcv uint64
 	// For each divisor checked, close the gap from both sides.
-	for lcv = 3; floor(candidate/lcv)+2 > lcv; lcv = lcv + 2 {
+	for lcv = 3; (candidate/lcv)+2 > lcv; lcv = lcv + 2 {
 		if candidate%lcv == 0 {
 			return false
 		}
