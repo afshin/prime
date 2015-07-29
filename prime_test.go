@@ -1,9 +1,6 @@
-package prime_test
+package prime
 
-import (
-	"github.com/afshin/prime"
-	"testing"
-)
+import "testing"
 
 var firstHundredNonPrimes = [100]uint64{
 	0, 1, 4, 6, 8, 9, 10, 12, 14, 15,
@@ -29,14 +26,14 @@ var firstHundredPrimes = [100]uint64{
 
 func TestFirstHundredNonPrimes(t *testing.T) {
 	for _, candidate := range firstHundredNonPrimes {
-		if prime.IsPrime(candidate) {
+		if IsPrime(candidate) {
 			t.Errorf("%d should not be prime.", candidate)
 		}
 	}
 }
 func TestFirstHundredPrimes(t *testing.T) {
 	for _, candidate := range firstHundredPrimes {
-		if !prime.IsPrime(candidate) {
+		if !IsPrime(candidate) {
 			t.Errorf("%d should be prime.", candidate)
 		}
 	}
